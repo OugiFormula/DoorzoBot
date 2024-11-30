@@ -42,6 +42,7 @@ def create_embed(productname,price,img,desc,url):
     embed.set_thumbnail(url=img)
     embed.set_image(url="https://cdn.discordapp.com/attachments/1310713923640754238/1312078202360959006/rainbow-line.gif")
     embed.add_field(name="Price", value=f"{price}", inline=True)
+    #embed.footer(text="Doorzo Bot Created By Yukio | ALPHA1.0")
     return embed
 
 # Translation function using translators library
@@ -86,7 +87,14 @@ class DoorzoView(discord.ui.View):
         super().__init__()
         self.user_id = user_id
         self.url = url
-      
+
+    #@discord.ui.button(label="Check it out on Doorzo!", style=discord.ButtonStyle.link)
+    #async def checkout_button(self, interaction: discord.Interaction, button: discord.ui.Button):
+        # Open the URL for the Doorzo product link
+        #button.url = self.url  # Set the button's URL to the one stored in the class
+        #await interaction.response.defer()  # Optionally defer the response if you want to acknowledge it
+        #print(f"Redirecting to Doorzo URL: {self.url}")
+
     @discord.ui.button(label="Translate",style=discord.ButtonStyle.primary)
     async def translate_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         await interaction.response.defer()  # Acknowledge the interaction immediately
@@ -213,6 +221,7 @@ async def about(interaction: discord.Interaction):
     embed.add_field(name="Bot Version", value="ALPHA1.0.0", inline=False)
     embed.add_field(name="Ping", value=f"{ping:.2f} ms", inline=True)
     embed.set_image(url="https://media.tenor.com/SYvxuKcTpEUAAAAi/cat-cats.gif")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1311989530689142825/1312347539818676266/botlogodoorzo.png?ex=674c2a63&is=674ad8e3&hm=136a48a0f7f5e90910e93f46c1f470abc2005218ccd9fc071c705b645497c8d6&")
     embed.set_footer(text="Created by Yukio Koito", icon_url="https://i.imgur.com/96n5Juo.png")
     
     await interaction.response.send_message(embed=embed)
