@@ -32,7 +32,7 @@
 This bot is not affiliated with or owned by Doorzo. It uses data scrapped off doorzo website for informational purposes only.
 <br />
 <br />
-This bot was created in order to display a useful information and enchance the experience of doorzo's official discord server.
+This bot was created in order to display useful information for users on discord related to doorzo and enchance the experience of doorzo's official discord server.
 <br />
 <br />
 
