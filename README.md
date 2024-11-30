@@ -59,9 +59,9 @@ go to config.json and you will see there bot_token replace YOUR_BOT_TOKEN, make 
 the command will show the list of all commands
 * /doorzo (url)
 the command will generate an embed with information about the doorzo listing scrapping the data from the site.
-* /currencyconvert (amount) (currency)
-The command will convert JPY to your currency using https://hexarate.paikama.co/ api.
-* /shippingcalculator (weight) (country)
+* /currencyconverter (amount) (currency)
+The command will convert from Japanese Yen to another currency (e.g., USD, EUR, GBP). using https://hexarate.paikama.co/ api.
+* /shippingcalculator (weight(g)) (country(first letter capital!))
 The command will send information about estimated shipping prices.
 * /about
 The command will send information about the bot.
