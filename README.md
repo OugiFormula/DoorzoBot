@@ -65,6 +65,8 @@ The command will convert from Japanese Yen to another currency (e.g., USD, EUR, 
 The command will send information about estimated shipping prices.
 * /about
 The command will send information about the bot.
+* /support
+The command will send information about doorzo's support and how to open a customer support ticket.
 
 ## Have fun!
 (keep in mind I dont have time to maintain this so feel free to play around with it and feel free to contribute)
