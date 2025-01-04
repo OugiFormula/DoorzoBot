@@ -87,7 +87,7 @@ class DoorzoView(discord.ui.View):
         super().__init__()
         self.user_id = user_id
         self.url = url
-
+    #TODO: (maybe) add a button to open up the link to the product page from doorzo
     #@discord.ui.button(label="Check it out on Doorzo!", style=discord.ButtonStyle.link)
     #async def checkout_button(self, interaction: discord.Interaction, button: discord.ui.Button):
         # Open the URL for the Doorzo product link
@@ -218,12 +218,28 @@ async def about(interaction: discord.Interaction):
         description="This bot is not affiliated with or owned by Doorzo. It uses data provided through scraping the website for informational purposes only. This bot was created in order to connect doorzo with the discord server and bring better overall user experience to the community",
         color=discord.Color.green()
     )
-    embed.add_field(name="Bot Version", value="ALPHA1.0.0", inline=False)
+    embed.add_field(name="Bot Version", value="ALPHA1.0.1", inline=False)
     embed.add_field(name="Ping", value=f"{ping:.2f} ms", inline=True)
     embed.set_image(url="https://media.tenor.com/SYvxuKcTpEUAAAAi/cat-cats.gif")
     embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/1311989530689142825/1312347539818676266/botlogodoorzo.png?ex=674c2a63&is=674ad8e3&hm=136a48a0f7f5e90910e93f46c1f470abc2005218ccd9fc071c705b645497c8d6&")
     embed.set_footer(text="Created by Yukio Koito", icon_url="https://i.imgur.com/96n5Juo.png")
     
+    await interaction.response.send_message(embed=embed)
+
+#support command
+@bot.tree.command(name="support", description="Displays information about doorzo's support")
+async def support(interaction: discord.Interaction):
+    embed = discord.Embed(title="Need help? - Doorzo is here for you!",description="There isn't much we can do on discord beside answering common knowledge and troubleshooting so for better customer support we suggest you try contacting doorzo's official support by creating a ticket.",colour=0x00b0f4)
+
+    embed.add_field(name="Keep in mind!",value="Doorzo's customer support works between Monday to Friday, 10:30 to 18:30 (JST) or for your timezone from <t:1735954200:t> to <t:1735983000:t>",inline=False)
+    embed.add_field(name="How do I open a customer support ticket?",value="keep in mind there is a different between customer support (which is a chatbot that gives you common answers for simple questions) and customer ticket support (which is given to you by a person and not a bot)",inline=False)
+    embed.add_field(name="Mobile",value="Go to your account section and scroll down, you will see customer ticket, click on it and you will see the option to create a new ticket.",inline=True)
+    embed.add_field(name="Website",value="on doorzo's website look to your right and you will see a small menu with a few options, click on customer ticket and then it will open a new page.\nthere you will be able to create a new customer ticket.",inline=True)
+    embed.add_field(name="here is an image that shows how to do it.",value=".",inline=False)
+
+    embed.set_image(url="https://cdn.discordapp.com/attachments/1307950009215488010/1325044894414278758/supportvisual.png?ex=677a5bb8&is=67790a38&hm=eae23a486cb28552f7a4044b20700126b0c78d83e90abb22dac179ad398cb431&")
+
+    embed.set_footer(text="Doorzo Bot")
     await interaction.response.send_message(embed=embed)
 
 # Define the /help command
@@ -236,6 +252,7 @@ async def help_command(interaction: discord.Interaction):
     embed.add_field(name="/doorzo (url)", value="Show information about doorzo listing", inline=False)
     embed.add_field(name="/currencyconverter (amount) (currency)", value="Convert from Japanese Yen to another currency (e.g., USD, EUR, GBP).", inline=False)
     embed.add_field(name="/shippingcalculator (weight(g)) (country(first letter capital!))", value="Get shipment price based on country and weight.", inline=False)
+    embed.add_field(name="/support", value="show information about doorzo support and how to open a customer support ticket")
     embed.set_image(url="https://cdn.discordapp.com/attachments/1310713923640754238/1312078202360959006/rainbow-line.gif")
     # Send the embed with all the available commands
     await interaction.response.send_message(embed=embed)
